@@ -3,10 +3,10 @@
   lib,
   ...
 }: let
-  cfg = config.flakecraft;
+  cfg = config.services.flakecraft;
 in
   with lib; {
-    options.flakecraft = {
+    options.services.flakecraft = {
       enable = mkEnableOption "enable flakecraft server";
 
       name = mkOption {
