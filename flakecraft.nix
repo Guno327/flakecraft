@@ -41,10 +41,8 @@ in
           isSystemUser = true;
           group = "flakecraft";
           createHome = false;
-          uid = 25565;
         };
         groups.flakecraft = {
-          gid = 25565;
         };
       };
 
@@ -58,14 +56,14 @@ in
 
         autoStart = true;
         image = "itzg/minecraft-server";
-        user = "25565:25565";
+        user = "${config.users.users.flakecraft.uid}:${config.users.groups.flakecraft.gid}";
 
         environment = mkMerge [
           cfg.environment
 
           {
-            UID = "25565";
-            GID = "25565";
+            UID = "${config.users.users.flakecraft.uid}";
+            GID = "${config.users.groups.flakecraft.gid}";
           }
         ];
 
