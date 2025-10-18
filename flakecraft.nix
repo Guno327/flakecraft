@@ -41,8 +41,10 @@ in
           isSystemUser = true;
           group = "flakecraft";
           createHome = false;
+          uid = 25565;
         };
         groups.flakecraft = {
+          gid = 25565;
         };
       };
 
@@ -62,8 +64,8 @@ in
           cfg.environment
 
           {
-            UID = "${config.users.users.flakecraft.uid}";
-            GID = "${config.users.groups.flakecraft.gid}";
+            UID = mkForce "${config.users.users.flakecraft.uid}";
+            GID = mkForce "${config.users.groups.flakecraft.gid}";
           }
         ];
 
