@@ -64,8 +64,8 @@ in
           cfg.environment
 
           {
-            UID = 25565;
-            GID = 25565;
+            UID = "25565";
+            GID = "25565";
           }
         ];
 
