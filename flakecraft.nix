@@ -22,13 +22,13 @@ in
       };
 
       ports = mkOption {
-        type = types.listOf str;
+        type = types.listOf types.str;
         default = ["25565:25565"];
         description = "List of port mappings to open in the container";
       };
 
       environment = mkOption {
-        type = types.attrsOf str;
+        type = types.attrsOf types.str;
         default = {};
         description = "Attribute set of any variables declared for the container image";
       };
