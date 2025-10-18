@@ -54,11 +54,20 @@ in
       ];
 
       virtualisation.oci-containers.containers."flakecraft-${cfg.name}" = {
-        inherit (cfg) ports environment;
+        inherit (cfg) ports;
 
         autoStart = true;
         image = "itzg/minecraft-server";
         user = "25565:25565";
+
+        environment = mkMerge [
+          cfg.environment
+
+          {
+            UID = 25565;
+            GID = 25565;
+          }
+        ];
 
         volumes = [
           "${cfg.dir}/${cfg.name}:/data"
