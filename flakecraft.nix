@@ -41,8 +41,11 @@ in
           isSystemUser = true;
           group = "flakecraft";
           createHome = false;
+          uid = 25565;
         };
-        groups.flakecraft = {};
+        groups.flakecraft = {
+          gid = 25565;
+        };
       };
 
       systemd.tmpfiles.rules = [
@@ -55,7 +58,7 @@ in
 
         autoStart = true;
         image = "itzg/minecraft-server";
-        user = "flakecraft:flakecraft";
+        user = "25565:25565";
 
         volumes = [
           "${cfg.dir}/${cfg.name}:/data"
