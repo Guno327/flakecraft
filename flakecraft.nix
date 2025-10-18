@@ -58,14 +58,14 @@ in
 
         autoStart = true;
         image = "itzg/minecraft-server";
-        user = "${config.users.users.flakecraft.uid}:${config.users.groups.flakecraft.gid}";
+        user = "25565:25565";
 
         environment = mkMerge [
           cfg.environment
 
           {
-            UID = mkForce "${config.users.users.flakecraft.uid}";
-            GID = mkForce "${config.users.groups.flakecraft.gid}";
+            UID = mkForce "25565";
+            GID = mkForce "25565";
           }
         ];
 
